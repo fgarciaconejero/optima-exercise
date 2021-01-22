@@ -8,11 +8,6 @@ namespace Classes
         public Team AwayTeam { get; private set; }
 
         public Match() { }
-        public Match(Team homeTeam, Team awayTeam)
-        {
-            HomeTeam = homeTeam;
-            AwayTeam = awayTeam;
-        }
         public void StartMatch(Team homeTeam, Team awayTeam)
         {
             this.HomeTeam = homeTeam;

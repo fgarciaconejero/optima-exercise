@@ -13,15 +13,13 @@ namespace Tests
         public void Match_Constructor()
         {
             // Arrange
-            Team homeTeam = new Team("Real Madrid", 1);
-            Team awayTeam = new Team("Barcelona", 1);
 
             // Act
-            Match match1 = new Match(homeTeam, awayTeam);
+            Match match1 = new Match();
 
             // Assert
-            Assert.AreEqual(match1.HomeTeam, homeTeam);
-            Assert.AreEqual(match1.AwayTeam, awayTeam);
+            Assert.AreEqual(match1.HomeTeam, null);
+            Assert.AreEqual(match1.AwayTeam, null);
         }
 
         [Test]
