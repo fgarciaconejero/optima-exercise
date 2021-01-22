@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Classes
 {
-    class Team
+    public class Team
     {
-        string name;
-        int score;
+        private string name;
+        private int score;
     }
 }
