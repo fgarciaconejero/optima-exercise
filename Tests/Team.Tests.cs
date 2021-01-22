@@ -4,7 +4,7 @@ using Classes;
 namespace Tests
 {
     [TestFixture]
-    public class TeamTests
+    class TeamTests
     {
         [Test]
         public void Team_Constructor()

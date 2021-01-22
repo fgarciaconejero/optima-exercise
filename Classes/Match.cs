@@ -4,7 +4,13 @@ namespace Classes
 {
     public class Match
     {
-        Team homeTeam;
-        Team awayTeam;
+        public Team HomeTeam { get; }
+        public Team AwayTeam { get; }
+
+        public Match(Team homeTeam, Team awayTeam)
+        {
+            HomeTeam = homeTeam;
+            AwayTeam = awayTeam;
+        }
     }
 }
