@@ -10,7 +10,7 @@ namespace Tests
     class MatchTests
     {
         [Test]
-        public void Team_Constructor()
+        public void Match_Constructor()
         {
             // Arrange
             Team homeTeam = new Team("Real Madrid", 1);
