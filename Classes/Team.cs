@@ -6,7 +6,15 @@ namespace Classes
 {
     public class Team
     {
-        private string name;
-        private int score;
+        // Team properties
+        public string Name { get; }
+        public int Score { get; }
+
+        // Team constructor
+        public Team(string name, int score)
+        {
+            this.Name = name;
+            this.Score = score;
+        }
     }
 }
