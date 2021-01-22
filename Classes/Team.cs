@@ -13,8 +13,8 @@ namespace Classes
         // Team constructor
         public Team(string name, int score)
         {
-            this.Name = name;
-            this.Score = score;
+            Name = name;
+            Score = score;
         }
     }
 }
