@@ -51,7 +51,26 @@ namespace Classes
                     Console.Read();
                     Console.Clear();
                     break;
+                case 3:
+                    Console.WriteLine("Choose the match you wish to update by týping its ID.");
+                    Console.WriteLine(GetSummary());
+                    int id = consoleHandler.ReadInt(false);
+                    Console.Clear();
+                    Console.WriteLine("Enter the updated score of the home team.");
+                    int homeTeamScore = consoleHandler.ReadInt(false);
+                    Console.Clear();
+                    Console.WriteLine("Enter the updated score of the away team.");
+                    int awayTeamScore = consoleHandler.ReadInt(false);
+                    Console.Clear();
+                    UpdateScore(id, homeTeamScore, awayTeamScore);
+                    break;
             }
+        }
+
+        public void UpdateScore(int id, int homeScore, int awayScore)
+        {
+            Matches[id-1].HomeTeam.Score = homeScore;
+            Matches[id-1].AwayTeam.Score = awayScore;
         }
 
         public string GetSummary()
@@ -75,6 +94,7 @@ namespace Classes
             Console.WriteLine("------------------------------------------------------------------------");
             Console.WriteLine(" 1 - Start new match.\n");
             Console.WriteLine(" 2 - Get a summary of the matches in the score board.\n");
+            Console.WriteLine(" 3 - Update a match's score.\n");
             Console.WriteLine(" 9 - Exit program.\n");
             Console.WriteLine("------------------------------------------------------------------------ \n");
         }

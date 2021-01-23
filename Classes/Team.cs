@@ -8,7 +8,7 @@ namespace Classes
     {
         // Team properties
         public string Name { get; }
-        public int Score { get; }
+        public int Score { get; set; }
 
         // Team constructor
         public Team(string name, int score)
