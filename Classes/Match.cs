@@ -9,10 +9,7 @@ namespace Classes
         public Team AwayTeam { get; private set; }
 
         // Match constructor
-        public Match() { }
-
-        // Match functions
-        public void StartMatch(Team homeTeam, Team awayTeam)
+        public Match(Team homeTeam, Team awayTeam)
         {
             this.HomeTeam = homeTeam;
             this.AwayTeam = awayTeam;
