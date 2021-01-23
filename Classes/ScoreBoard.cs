@@ -1,6 +1,7 @@
 ﻿using Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Classes
@@ -41,7 +42,7 @@ namespace Classes
 
                     Team firstTeam = new Team(firstTeamName, firstTeamScore);
                     Team secondTeam = new Team(secondTeamName, secondTeamScore);
-                    Match auxMatch = new Match(firstTeam, secondTeam);
+                    Match auxMatch = new Match(firstTeam, secondTeam, Matches.Count);
 
                     StartMatch(auxMatch);
                     break;
@@ -86,9 +87,10 @@ namespace Classes
         public string GetSummary()
         {
             string result = "";
+            List<Match> sortedMatches = Matches.OrderByDescending(o => (o.HomeTeam.Score + o.AwayTeam.Score)).ThenByDescending(o => o.ID).ToList<Match>();
             for (int i = 0; i < Matches.Count; i++)
             {
-                result += "Match ID: " + (i+1) + " - " + Matches[i].HomeTeam.Name + " " + Matches[i].HomeTeam.Score + " vs " + Matches[i].AwayTeam.Name + " " + Matches[i].AwayTeam.Score + "\n";
+                result += "Match ID: " + sortedMatches[i].ID + " - " + sortedMatches[i].HomeTeam.Name + " " + sortedMatches[i].HomeTeam.Score + " vs " + sortedMatches[i].AwayTeam.Name + " " + sortedMatches[i].AwayTeam.Score + "\n";
             }
             return result;
         }
