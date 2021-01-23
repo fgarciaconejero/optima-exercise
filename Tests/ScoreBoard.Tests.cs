@@ -21,6 +21,7 @@ namespace Tests
             // Assert
             Assert.AreEqual(scoreBoard.Matches, matches);
         }
+
         [Test]
         public void ScoreBoard_Start()
         {
@@ -35,6 +36,24 @@ namespace Tests
 
             // Assert
             Assert.AreEqual(scoreBoard.Matches[0], match1);
+        }
+
+        [Test]
+        public void ScoreBoard_ProcessInput()
+        {
+            // Arrange
+            Team homeTeam = new Team("Real Madrid", 1);
+            Team awayTeam = new Team("Barcelona", 1);
+            Match match1 = new Match(homeTeam, awayTeam);
+            List<Match> matches = new List<Match>();
+            matches.Add(match1);
+            ScoreBoard scoreBoard = new ScoreBoard();
+
+            // Act
+            scoreBoard.ProcessInput(0);
+
+            // Assert
+            Assert.AreEqual(scoreBoard.Matches, matches);
         }
     }
 }
