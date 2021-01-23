@@ -43,8 +43,8 @@ namespace Tests
         public void ScoreBoard_ProcessInput()
         {
             // Arrange
-            Team homeTeam = new Team("Real Madrid", 1);
-            Team awayTeam = new Team("Real Madrid", 1);
+            Team homeTeam = new Team("Manchester United", 1);
+            Team awayTeam = new Team("Manchester United", 1);
             Match match1 = new Match(homeTeam, awayTeam);
             List<Match> matches = new List<Match>
             {
@@ -57,7 +57,10 @@ namespace Tests
             scoreBoard.ProcessInput(1);
 
             // Assert
-            Assert.AreEqual(scoreBoard.Matches, matches);
+            Assert.AreEqual(scoreBoard.Matches[0].AwayTeam.Name, matches[0].AwayTeam.Name);
+            Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Name, matches[0].HomeTeam.Name);
+            Assert.AreEqual(scoreBoard.Matches[0].AwayTeam.Score, matches[0].AwayTeam.Score);
+            Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Score, matches[0].HomeTeam.Score);
         }
 
         public class ConsoleHandler_Mock : IConsoleHandler
