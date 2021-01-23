@@ -9,37 +9,20 @@ namespace Football_World_Cup_Score_Board
         static void Main(string[] args)
         {
             int input = 0;
-            ScoreBoard scoreBoard = new ScoreBoard(new ConsoleHandler());
+            ConsoleHandler consoleHandler = new ConsoleHandler();
+            ScoreBoard scoreBoard = new ScoreBoard(consoleHandler);
 
             Console.WriteLine("Welcome to the Football World Cup Score Board!");
             while (input != 9)
             {
                 scoreBoard.DisplayMenu();
-                input = EnterIntegerToConsole(false);
+                input = consoleHandler.ReadInt(false);
 
                 Console.Clear();
                 scoreBoard.ProcessInput(input);
             }
             Console.WriteLine("Thanks for using Football World Cup Score Board.");
             Console.WriteLine("Exiting...");
-        }
-
-        public static int EnterIntegerToConsole(bool format)
-        {
-            int input = 0;
-            while (format == false)
-            {
-                try
-                {
-                    input = Convert.ToInt32(Console.ReadLine());
-                    format = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("\nWrong input type! Please, enter an integer.");
-                }
-            }
-            return input;
         }
     }
 }
