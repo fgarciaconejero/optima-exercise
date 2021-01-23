@@ -15,6 +15,7 @@ namespace Classes
         // ScoreBoard functions
         public void StartMatch(List<Match> matches)
         {
+            Matches = matches;
         }
     }
 }

@@ -13,13 +13,13 @@ namespace Tests
         public void ScoreBoard_Constructor()
         {
             // Arrange
-            List<Match> matches = new List<Match>();
+            //List<Match> matches = new List<Match>();
 
             // Act
             ScoreBoard scoreBoard = new ScoreBoard();
 
             // Assert
-            Assert.AreEqual(scoreBoard.Matches, matches);
+            Assert.AreEqual(scoreBoard.Matches, null);
         }
     }
 }
