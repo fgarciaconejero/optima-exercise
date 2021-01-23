@@ -120,7 +120,7 @@ namespace Tests
             scoreBoard.StartMatch(match1);
 
             // Act
-            scoreBoard.UpdateScore(0, 2, 4);
+            scoreBoard.UpdateScore(1, 2, 4);
 
             // Assert
             Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Score, 2);
