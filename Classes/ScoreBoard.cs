@@ -47,7 +47,7 @@ namespace Classes
                     break;
                 case 2:
                     Console.WriteLine(GetSummary());
-                    Console.WriteLine("Press any button to go back to the menu.");
+                    Console.WriteLine("Press ENTER to go back to the menu.");
                     Console.Read();
                     Console.Clear();
                     break;
@@ -63,6 +63,11 @@ namespace Classes
                     int awayTeamScore = consoleHandler.ReadInt(false);
                     Console.Clear();
                     UpdateScore(id, homeTeamScore, awayTeamScore);
+                    break;
+                case 4:
+                    Console.WriteLine("Choose the match you wish to finish by týping its ID.");
+                    Console.WriteLine(GetSummary());
+                    FinishMatch(consoleHandler.ReadInt(false) - 1);
                     break;
                 case 9:
                     break;
@@ -100,6 +105,7 @@ namespace Classes
             Console.WriteLine(" 1 - Start new match.\n");
             Console.WriteLine(" 2 - Get a summary of the matches in the score board.\n");
             Console.WriteLine(" 3 - Update a match's score.\n");
+            Console.WriteLine(" 4 - Finish a match.\n");
             Console.WriteLine(" 9 - Exit program.\n");
             Console.WriteLine("------------------------------------------------------------------------ \n");
         }
