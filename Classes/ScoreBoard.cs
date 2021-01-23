@@ -64,6 +64,11 @@ namespace Classes
             return result;
         }
 
+        public void FinishMatch(int id)
+        {
+            Matches.Remove(Matches[id]);
+        }
+
         public void DisplayMenu()
         {
             Console.WriteLine("Please type one of the following values:");
