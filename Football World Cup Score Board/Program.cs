@@ -12,7 +12,7 @@ namespace Football_World_Cup_Score_Board
             ConsoleHandler consoleHandler = new ConsoleHandler();
             ScoreBoard scoreBoard = new ScoreBoard(consoleHandler);
 
-            Console.WriteLine("Welcome to the Football World Cup Score Board!");
+            Console.WriteLine("Welcome to the Football World Cup Score Board! \n");
 
             while (input != 9)
             {
@@ -23,7 +23,7 @@ namespace Football_World_Cup_Score_Board
                 scoreBoard.ProcessInput(input);
             }
 
-            Console.WriteLine("Thanks for using Football World Cup Score Board.");
+            Console.WriteLine("Thanks for using Football World Cup Score Board. \n");
             Console.WriteLine("Exiting...");
         }
     }
