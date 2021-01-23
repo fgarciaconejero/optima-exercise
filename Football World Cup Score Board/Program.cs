@@ -22,9 +22,19 @@ namespace Football_World_Cup_Score_Board
                 {
                     case 1:
                         Console.WriteLine("Please enter the first team's name.");
-                        string teamName = Console.ReadLine();
+                        string firstTeamName = Console.ReadLine();
                         Console.WriteLine("Please enter the first team's score.");
-                        input = EnterIntegerToConsole(false);
+                        int firstTeamScore = EnterIntegerToConsole(false);
+                        Console.WriteLine("Please enter the second team's name.");
+                        string secondTeamName = Console.ReadLine();
+                        Console.WriteLine("Please enter the second team's score.");
+                        int secondTeamScore = EnterIntegerToConsole(false);
+                        Match auxMatch = new Match();
+                        Team firstTeam = new Team(firstTeamName, firstTeamScore);
+                        Team secondTeam = new Team(secondTeamName, secondTeamScore);
+
+                        auxMatch.StartMatch(firstTeam, secondTeam);
+                        matches.Add(auxMatch);
                         break;
 
                 }
