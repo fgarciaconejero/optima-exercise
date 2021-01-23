@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,15 +9,17 @@ namespace Classes
     {
         // ScoreBoard properties
         public List<Match> Matches { get; private set; }
+        public IConsoleHandler consoleHandler;
 
         // ScoreBoard properties
-        public ScoreBoard() 
+        public ScoreBoard(IConsoleHandler consoleHandler) 
         {
             Matches = new List<Match>();
+            this.consoleHandler = consoleHandler;
         }
 
         // ScoreBoard functions
-        private void StartMatch(Match match)
+        public void StartMatch(Match match)
         {
             Matches.Add(match);
         }
@@ -27,14 +30,14 @@ namespace Classes
             {
                 case 1:
                     Console.WriteLine("Please enter the first team's name.");
-                    string firstTeamName = Console.ReadLine();
+                    string firstTeamName = consoleHandler.ReadString();
                     Console.WriteLine("Please enter the first team's score.");
-                    int firstTeamScore = EnterIntegerToConsole(false);
+                    int firstTeamScore = consoleHandler.ReadInt(false);
 
                     Console.WriteLine("Please enter the second team's name.");
-                    string secondTeamName = Console.ReadLine();
+                    string secondTeamName = consoleHandler.ReadString();
                     Console.WriteLine("Please enter the second team's score.");
-                    int secondTeamScore = EnterIntegerToConsole(false);
+                    int secondTeamScore = consoleHandler.ReadInt(false);
 
                     Team firstTeam = new Team(firstTeamName, firstTeamScore);
                     Team secondTeam = new Team(secondTeamName, secondTeamScore);
@@ -43,24 +46,6 @@ namespace Classes
                     StartMatch(auxMatch);
                     break;
             }
-        }
-
-        public static int EnterIntegerToConsole(bool format)
-        {
-            int input = 0;
-            while (format == false)
-            {
-                try
-                {
-                    input = Convert.ToInt32(Console.ReadLine());
-                    format = true;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("\nWrong input type! Please, enter an integer.");
-                }
-            }
-            return input;
         }
 
         public void DisplayMenu()

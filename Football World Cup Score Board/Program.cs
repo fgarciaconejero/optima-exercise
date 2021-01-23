@@ -9,7 +9,7 @@ namespace Football_World_Cup_Score_Board
         static void Main(string[] args)
         {
             int input = 0;
-            ScoreBoard scoreBoard = new ScoreBoard();
+            ScoreBoard scoreBoard = new ScoreBoard(new ConsoleHandler());
 
             Console.WriteLine("Welcome to the Football World Cup Score Board!");
             while (input != 9)
