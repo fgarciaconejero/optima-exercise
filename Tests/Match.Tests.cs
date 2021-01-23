@@ -17,7 +17,7 @@ namespace Tests
             Team awayTeam = new Team("Barcelona", 1);
 
             // Act
-            Match match1 = new Match(homeTeam, awayTeam);
+            Match match1 = new Match(homeTeam, awayTeam, 0);
 
             // Assert
             Assert.AreEqual(match1.HomeTeam, homeTeam);
