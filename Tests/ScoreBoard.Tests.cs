@@ -104,7 +104,7 @@ namespace Tests
             scoreBoard.FinishMatch(0);
 
             // Assert
-            Assert.AreEqual(matches, scoreBoard.Matches);
+            Assert.AreNotEqual(matches.Count, scoreBoard.Matches.Count);
         }
 
         public class ConsoleHandler_Mock : IConsoleHandler
