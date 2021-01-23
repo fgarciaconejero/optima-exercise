@@ -68,11 +68,40 @@ namespace Tests
         {
             // Arrange
             ScoreBoard scoreBoard = new ScoreBoard(new ConsoleHandler_Mock());
-            Team homeTeam = new Team("Manchester United", 1);
-            Team awayTeam = new Team("Real Madrid", 3);
-            Match match1 = new Match(homeTeam, awayTeam);
-            string summary = "Match ID: 1 - Manchester United 1 vs Real Madrid 3\n";
-            scoreBoard.StartMatch(match1);
+
+            Team homeTeam = new Team("Mexico", 0);
+            Team awayTeam = new Team("Canada", 5);
+            Match match = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match);
+
+
+            homeTeam = new Team("Spain", 10);
+            awayTeam = new Team("Brazil", 2);
+            match = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match);
+
+
+            homeTeam = new Team("Germany", 2);
+            awayTeam = new Team("France", 2);
+            match = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match);
+
+
+            homeTeam = new Team("Uruguay", 6);
+            awayTeam = new Team("Italy", 6);
+            match = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match);
+
+            homeTeam = new Team("Argentina", 3);
+            awayTeam = new Team("Australia", 1);
+            match = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match);
+
+            string summary = "Match ID: 1 - Uruguay 6 vs Italy 6\n";
+            summary += "Match ID: 2 - Spain 10 vs Brazil 2\n";
+            summary += "Match ID: 2 - Mexico 0 vs Canada 5\n";
+            summary += "Match ID: 2 - Argentina 3 vs Australia 1\n";
+            summary += "Match ID: 2 - Germany 2 vs France 2\n";
 
             // Act
             string summaryResult = scoreBoard.GetSummary();
