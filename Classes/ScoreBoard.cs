@@ -60,9 +60,7 @@ namespace Classes
                     Console.WriteLine("Enter the updated score of the away team.");
                     int awayTeamScore = consoleHandler.ReadInt(false);
 
-
-
-
+                    UpdateScore(id, homeTeamScore, awayTeamScore);
                     break;
             }
         }
