@@ -107,6 +107,26 @@ namespace Tests
             Assert.AreNotEqual(matches.Count, scoreBoard.Matches.Count);
         }
 
+        [Test]
+        public void ScoreBoard_UpdateScore()
+        {
+            // Arrange
+            ScoreBoard scoreBoard = new ScoreBoard(new ConsoleHandler_Mock());
+
+            Team homeTeam = new Team("Manchester United", 1);
+            Team awayTeam = new Team("Real Madrid", 3);
+            Match match1 = new Match(homeTeam, awayTeam);
+            scoreBoard.StartMatch(match1);
+            scoreBoard.StartMatch(match1);
+
+            // Act
+            scoreBoard.UpdateScore(0, 2, 4);
+
+            // Assert
+            Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Score, 2);
+            Assert.AreEqual(scoreBoard.Matches[0].AwayTeam.Score, 4);
+        }
+
         public class ConsoleHandler_Mock : IConsoleHandler
         {
             public string ReadString()
