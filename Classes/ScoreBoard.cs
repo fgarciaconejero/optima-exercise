@@ -64,6 +64,11 @@ namespace Classes
                     Console.Clear();
                     UpdateScore(id, homeTeamScore, awayTeamScore);
                     break;
+                case 9:
+                    break;
+                default:
+                    Console.WriteLine("Please enter a valid value.");
+                    break;
             }
         }
 
