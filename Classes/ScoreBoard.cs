@@ -12,7 +12,7 @@ namespace Classes
         public List<Match> Matches { get; private set; }
         public IConsoleHandler consoleHandler;
 
-        // ScoreBoard properties
+        // ScoreBoard constructor
         public ScoreBoard(IConsoleHandler consoleHandler) 
         {
             Matches = new List<Match>();
@@ -57,12 +57,15 @@ namespace Classes
                     Console.WriteLine(GetSummary());
                     int id = consoleHandler.ReadInt(false);
                     Console.Clear();
+
                     Console.WriteLine("Enter the updated score of the home team.");
                     int homeTeamScore = consoleHandler.ReadInt(false);
                     Console.Clear();
+
                     Console.WriteLine("Enter the updated score of the away team.");
                     int awayTeamScore = consoleHandler.ReadInt(false);
                     Console.Clear();
+
                     UpdateScore(id, homeTeamScore, awayTeamScore);
                     break;
                 case 4:
