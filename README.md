@@ -6,4 +6,6 @@ Please do keep in mind that, although I do have C# .NET experience, I've been de
 
 Also, the "ConsoleHandler" class as well as its interface were only created for me to be able to test everything other than console reads and writes, since I found it really difficult and from what I've researched, there is not a way to automate a test to read the console. My goal by doing this was issolating the Console.ReadLine() and Console.WriteLine() functions so that the rest of it could be properly tested, mocking some values instead of getting/posting them from/into the console.
 
+Lastly, I would generally send this as an .exe file, but from what I gather from the instructions that is not what you ask of me.
+
 Looking forward to hearing your thoughts on it!
