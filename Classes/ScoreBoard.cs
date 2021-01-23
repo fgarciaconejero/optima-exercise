@@ -45,7 +45,6 @@ namespace Classes
                     Match auxMatch = new Match(firstTeam, secondTeam, Matches.Count);
 
                     StartMatch(auxMatch);
-                    Console.Clear();
                     break;
                 case 2:
                     Console.WriteLine(GetSummary());
