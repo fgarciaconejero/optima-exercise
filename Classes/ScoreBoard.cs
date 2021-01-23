@@ -45,7 +45,23 @@ namespace Classes
 
                     StartMatch(auxMatch);
                     break;
+                case 2:
+                    Console.WriteLine(GetSummary());
+                    Console.WriteLine("Press any button to go back to the menu.");
+                    Console.Read();
+                    Console.Clear();
+                    break;
             }
+        }
+
+        public string GetSummary()
+        {
+            string result = "";
+            for (int i = 0; i < Matches.Count; i++)
+            {
+                result += "Match ID: " + (i+1) + " - " + Matches[i].HomeTeam.Name + " " + Matches[i].HomeTeam.Score + " vs " + Matches[i].AwayTeam.Name + " " + Matches[i].AwayTeam.Score + "\n";
+            }
+            return result;
         }
 
         public void DisplayMenu()
@@ -53,6 +69,7 @@ namespace Classes
             Console.WriteLine("Please type one of the following values:");
             Console.WriteLine("------------------------------------------------------------------------");
             Console.WriteLine(" 1 - Start new match.\n");
+            Console.WriteLine(" 2 - Get a summary of the matches in the score board.\n");
             Console.WriteLine(" 9 - Exit program.\n");
             Console.WriteLine("------------------------------------------------------------------------ \n");
         }
