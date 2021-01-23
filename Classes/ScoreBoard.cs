@@ -68,7 +68,7 @@ namespace Classes
                 case 4:
                     Console.WriteLine("Choose the match you wish to finish by týping its ID.");
                     Console.WriteLine(GetSummary());
-                    FinishMatch(consoleHandler.ReadInt(false) - 1);
+                    FinishMatch(consoleHandler.ReadInt(false));
                     break;
                 case 9:
                     break;
@@ -80,8 +80,8 @@ namespace Classes
 
         public void UpdateScore(int id, int homeScore, int awayScore)
         {
-            Matches[id-1].HomeTeam.Score = homeScore;
-            Matches[id-1].AwayTeam.Score = awayScore;
+            Matches[id].HomeTeam.Score = homeScore;
+            Matches[id].AwayTeam.Score = awayScore;
         }
 
         public string GetSummary()
