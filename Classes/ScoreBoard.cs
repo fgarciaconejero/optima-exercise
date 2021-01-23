@@ -55,11 +55,13 @@ namespace Classes
                     Console.WriteLine("Choose the match you wish to update by týping its ID.");
                     Console.WriteLine(GetSummary());
                     int id = consoleHandler.ReadInt(false);
+                    Console.Clear();
                     Console.WriteLine("Enter the updated score of the home team.");
                     int homeTeamScore = consoleHandler.ReadInt(false);
+                    Console.Clear();
                     Console.WriteLine("Enter the updated score of the away team.");
                     int awayTeamScore = consoleHandler.ReadInt(false);
-
+                    Console.Clear();
                     UpdateScore(id, homeTeamScore, awayTeamScore);
                     break;
             }
@@ -67,8 +69,8 @@ namespace Classes
 
         public void UpdateScore(int id, int homeScore, int awayScore)
         {
-            Matches[id].HomeTeam.Score = homeScore;
-            Matches[id].AwayTeam.Score = awayScore;
+            Matches[id-1].HomeTeam.Score = homeScore;
+            Matches[id-1].AwayTeam.Score = awayScore;
         }
 
         public string GetSummary()
