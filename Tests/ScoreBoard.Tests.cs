@@ -40,7 +40,7 @@ namespace Tests
         }
 
         [Test]
-        public void ScoreBoard_ProcessInput()
+        public void ScoreBoard_ProcessInput_Input_Is_1()
         {
             // Arrange
             Team homeTeam = new Team("Manchester United", 1);
@@ -61,6 +61,24 @@ namespace Tests
             Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Name, matches[0].HomeTeam.Name);
             Assert.AreEqual(scoreBoard.Matches[0].AwayTeam.Score, matches[0].AwayTeam.Score);
             Assert.AreEqual(scoreBoard.Matches[0].HomeTeam.Score, matches[0].HomeTeam.Score);
+        }
+
+        [Test]
+        public void ScoreBoard_GetSummary()
+        {
+            // Arrange
+            ScoreBoard scoreBoard = new ScoreBoard(new ConsoleHandler_Mock());
+            Team homeTeam = new Team("Manchester United", 1);
+            Team awayTeam = new Team("Real Madrid", 3);
+            Match match1 = new Match(homeTeam, awayTeam);
+            string summary = "Match ID: 1 - Manchester United 1 vs Real Madrid 3\n";
+            scoreBoard.StartMatch(match1);
+
+            // Act
+            string summaryResult = scoreBoard.GetSummary();
+
+            // Assert
+            Assert.AreEqual(summary, summaryResult);
         }
 
         public class ConsoleHandler_Mock : IConsoleHandler
