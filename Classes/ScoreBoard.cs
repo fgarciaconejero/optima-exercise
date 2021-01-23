@@ -16,7 +16,7 @@ namespace Classes
         }
 
         // ScoreBoard functions
-        public void StartMatch(Match match)
+        private void StartMatch(Match match)
         {
             Matches.Add(match);
         }
