@@ -30,7 +30,6 @@ namespace Classes
             switch (input)
             {
                 case 1:
-                    //Console.WriteLine("Please enter the first team's name.\n");
                     Console.Write("Please enter the home team's ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("NAME");
