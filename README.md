@@ -1,11 +1,17 @@
-# optima-exercise
+# **Football World Cup Score Board**
+Hi there, my name is Facu and this is my implementation of the Football World Cup Score Board!
 
-Hi there! My name is Facu.
+<br>
 
-Please do keep in mind that, although I do have C# .NET experience, I've been developing in Go for the last year. I think I did a good job, but I may have missed some C#-specific details. However, I strongly believe that after a couple of days of getting back to developing in it, I won't be missing them anymore.
+## Installation 🔧
+### - Clone the repository.
+### - Open the **solution** (not just the folder).
+### - Build the solution, preferably in "Release mode", but it isn't mandatory.
+### - Run it from VS or go to the "bin" folder and look for a ".exe" file (inside the "Debug" or "Release" folder,  depending on how you chose to build the solution).
 
-Also, the "ConsoleHandler" class as well as its interface were only created for me to be able to test everything other than console reads and writes, since I found it really difficult and from what I've researched, there is not a way to automate a test to read the console. My goal by doing this was issolating the Console.ReadLine() and Console.WriteLine() functions so that the rest of it could be properly tested, mocking some values instead of getting/posting them from/into the console.
+<br>
+<br>
 
-Lastly, I would generally send this as an .exe file, but from what I gather from the instructions that is not what you ask of me.
+Please do keep in mind that, although I do have C# .NET experience, I've been developing in Go for the last year. I think I did a good job, but I may have missed some C#-specific details. **However, I strongly believe that after a couple of days of getting back to developing in it, I won't be missing them anymore.**
 
 Looking forward to hearing your thoughts on it!
