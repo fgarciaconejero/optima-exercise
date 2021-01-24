@@ -13,7 +13,7 @@ namespace Classes
         public IConsoleHandler consoleHandler;
 
         // ScoreBoard constructor
-        public ScoreBoard(IConsoleHandler consoleHandler) 
+        public ScoreBoard(IConsoleHandler consoleHandler)
         {
             Matches = new List<Match>();
             this.consoleHandler = consoleHandler;
@@ -30,14 +30,28 @@ namespace Classes
             switch (input)
             {
                 case 1:
-                    Console.WriteLine("Please enter the first team's name.\n");
+                    //Console.WriteLine("Please enter the first team's name.\n");
+                    Console.Write("Please enter the first team's ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("NAME");
+                    Console.ForegroundColor = ConsoleColor.White;
+
                     string firstTeamName = consoleHandler.ReadString();
-                    Console.WriteLine("Please enter the first team's score.\n");
+                    Console.Write("Please enter the first team's ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("SCORE");
+                    Console.ForegroundColor = ConsoleColor.White;
                     int firstTeamScore = consoleHandler.ReadInt(false);
 
-                    Console.WriteLine("Please enter the second team's name.\n");
+                    Console.Write("Please enter the second team's ");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("NAME");
+                    Console.ForegroundColor = ConsoleColor.White;
                     string secondTeamName = consoleHandler.ReadString();
-                    Console.WriteLine("Please enter the second team's score.\n");
+                    Console.Write("Please enter the second team's ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("SCORE");
+                    Console.ForegroundColor = ConsoleColor.White;
                     int secondTeamScore = consoleHandler.ReadInt(false);
 
                     Team firstTeam = new Team(firstTeamName, firstTeamScore);
