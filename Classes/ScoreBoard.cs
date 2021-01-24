@@ -31,24 +31,24 @@ namespace Classes
             {
                 case 1:
                     //Console.WriteLine("Please enter the first team's name.\n");
-                    Console.Write("Please enter the first team's ");
+                    Console.Write("Please enter the home team's ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("NAME");
                     Console.ForegroundColor = ConsoleColor.White;
 
                     string firstTeamName = consoleHandler.ReadString();
-                    Console.Write("Please enter the first team's ");
+                    Console.Write("Please enter the home team's ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("SCORE");
                     Console.ForegroundColor = ConsoleColor.White;
                     int firstTeamScore = consoleHandler.ReadInt(false);
 
-                    Console.Write("Please enter the second team's ");
+                    Console.Write("Please enter the away team's ");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("NAME");
                     Console.ForegroundColor = ConsoleColor.White;
                     string secondTeamName = consoleHandler.ReadString();
-                    Console.Write("Please enter the second team's ");
+                    Console.Write("Please enter the away team's ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("SCORE");
                     Console.ForegroundColor = ConsoleColor.White;
